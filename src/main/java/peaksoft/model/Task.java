@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Date;
 
 import static javax.persistence.CascadeType.*;
 
@@ -26,7 +27,7 @@ public class Task {
     private String taskText;
 
     @Column(name = "dead_line")
-    private String deadLine;
+    private Date deadLine;
 
     @ManyToOne(cascade = {MERGE,DETACH,REFRESH,PERSIST}, fetch = FetchType.EAGER)
     private Lesson lesson;
